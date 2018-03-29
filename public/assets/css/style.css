@@ -1,0 +1,39 @@
+body {
+	background-image: url("");
+	background-position: center;
+
+}
+
+#logo {
+	background-image: url("../img/logo.png");
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: 50%;
+	padding: 60px;
+}
+
+.container {
+	/*background-color: grey;*/
+	padding-bottom: 80px;
+};
+
+h1 {
+	text-align: center;
+
+}
+
+h2 {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+}
+
+#right-col {
+	background-color: white;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	padding-right: 40px;
+	padding-left: 40px;
+}
