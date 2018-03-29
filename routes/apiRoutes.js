@@ -6,7 +6,7 @@ module.exports = function(app) {
     db.Pass.create({
       website: req.body.website,
       password: req.body.password,
-      userId: req.body.userId
+      UserId: req.body.UserId
     }).then(function(dbPass) {
       res.json(dbPass);
     });
@@ -40,6 +40,8 @@ module.exports = function(app) {
       password: req.body.password
     }).then(function(dbUser) {
       res.json(dbUser);
+    }).catch(function(err){
+      res.send(err)
     });
   });
 
