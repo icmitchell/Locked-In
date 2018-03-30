@@ -20,7 +20,6 @@
 	</div>
 
 </body>
-</html>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(".changePassword").on('click', function(event) {
@@ -32,14 +31,12 @@
 			$.ajax({
 				url: queryURL,
 				type: "PUT",
-				contentType: 'application/json',
-				data: JSON.stringify({password: newPassword}),
-				success: function(result) {
-					location.reload()
-				}
+				contentType: 'json',
+				data: {password: newPassword}
+			}).done(function(result) {
+				console.log(result)
 			})
 		})
-
-		
-	});
+	})
 </script>
+</html>

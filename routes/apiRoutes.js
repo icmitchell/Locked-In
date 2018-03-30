@@ -10,32 +10,27 @@ function loggedIn(req, res, next) {
 
 module.exports = function(app) {
 
-  app.post("/api/website", function(req, res) {
-    console.log(req.session)
-    // db.Pass.create({
-    //   website: req.body.website,
-    //   password: req.body.password,
-    //   UserId: req.body.id
-    // }).then(function(dbPass) {
-    //   res.json(dbPass);
-    // });
+  app.post("/api/website", loggedIn, function(req, res) {
+    db.Pass.create({
+      website: req.body.website,
+      password: req.body.password,
+      UserId: req.user.dataValues.id
+    }).then(function(dbPass) {
+      res.redirect("/dashboard")
+    });
   }); 
 
-
-
-
-  app.put("/api/passwords/:id", function(req, res) {
+  app.put("/api/passwords/:id", loggedIn, function(req, res) {
     db.Pass.update({
       password: req.body.password
     }, {
       where: {id: req.params.id}
     }).then(function(result) {
-      console.log("Updated!")
-      res.json(result);
+      res.redirect("/dashboard")
     })
   });
 
-  app.get("/api/users", function(req, res) {
+  app.get("/api/users", loggedIn, function(req, res) {
     db.User.findOne({
       where: {
         id: req.user.dataValues.id
@@ -55,7 +50,5 @@ module.exports = function(app) {
       res.send(err)
     });
   });
-
-  // app.post()
 
 };

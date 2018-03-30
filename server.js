@@ -1,25 +1,20 @@
 var express = require('express');
 var morgan = require('morgan'); // JUST FOR LOGS
-var cookieSession = require('cookie-session') // for sessions
+var session = require('express-session') // for sessions
 var bodyParser = require('body-parser') // for req.body
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcrypt');
-var cookieParser = require('cookie-parser')
+var path = require("path");
 var app = express();
 var PORT = process.env.PORT || 8080;
-app.use(cookieParser())
-app.set('trust proxy', 1)
 
-app.use(cookieParser('MySecret'));
-app.use(cookieSession({
-  name: 'session',
-  keys: "secret",
-  cookie: {
-    maxAge: 30 * 24 * 60 * 60 * 1000
-  }
+app.use(session({ 
+  secret: 'secretKey',
+  resave: true,
+  saveUninitialized: true,
+  cookie: { maxAge: 100 * 60 * 60 * 24 * 30}
 }));
-
 
 app.use(passport.initialize());
 app.use(passport.session());

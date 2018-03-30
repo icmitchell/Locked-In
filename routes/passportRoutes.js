@@ -9,29 +9,7 @@ app.set("view engine", "handlebars");
 module.exports = function(app) {
 
 
-	app.post('/login', passport.authenticate('local', {failureRedirect: '/'}), function(req, res) {
-		var username = req.user.dataValues.name
-		db.Pass.findAll({
-			where: {
-				userId: req.user.dataValues.id
-			}
-		}).then(function(result) {
-			var websites = []
-			for (var i = 0; i < result.length; i++) {
-				var siteHolder = {
-					id: result[i].dataValues.id,
-					website: result[i].dataValues.website,
-					password: result[i].dataValues.password
-				}
-				websites.push(siteHolder)
-			}
-			var hbsObject = {
-				websites: websites,
-				username: username
-			};
-			res.render("sites", hbsObject);
-		})
-	})
+	app.post('/login', passport.authenticate('local', {failureRedirect: '/', successRedirect: '/dashboard'}))
 
 	app.get('/logout',(req,res)=>{
 		req.logout();
