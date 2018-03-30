@@ -1,13 +1,25 @@
 var express = require('express');
 var morgan = require('morgan'); // JUST FOR LOGS
-var session = require('express-session') // for sessions
+var cookieSession = require('cookie-session') // for sessions
 var bodyParser = require('body-parser') // for req.body
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcrypt');
-
+var cookieParser = require('cookie-parser')
 var app = express();
 var PORT = process.env.PORT || 8080;
+app.use(cookieParser())
+app.set('trust proxy', 1)
+
+app.use(cookieParser('MySecret'));
+app.use(cookieSession({
+  name: 'session',
+  keys: "secret",
+  cookie: {
+    maxAge: 30 * 24 * 60 * 60 * 1000
+  }
+}));
+
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -20,12 +32,6 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.use(session({ 
-  secret: 'secretKey',
-  resave: true,
-  saveUninitialized: true,
-  cookie: { maxAge: 100 * 60 * 60 * 24 * 30}
-}));
 
 var db = require("./models");
 
@@ -47,7 +53,7 @@ passport.use(new LocalStrategy(function(username, password, done) {
     if (user == null) {
       return done(null, false)
     }
-    if (res) {
+    else if (res) {
       return done(null, user)
     }
     return done(null, false)

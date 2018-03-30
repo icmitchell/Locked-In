@@ -9,7 +9,7 @@ app.set("view engine", "handlebars");
 module.exports = function(app) {
 
 
-	app.post('/login', passport.authenticate('local', {failureRedirect: '/failed'}), function(req, res) {
+	app.post('/login', passport.authenticate('local', {failureRedirect: '/'}), function(req, res) {
 		var username = req.user.dataValues.name
 		db.Pass.findAll({
 			where: {
@@ -30,16 +30,11 @@ module.exports = function(app) {
 				username: username
 			};
 			res.render("sites", hbsObject);
-
-//////////////////////////////////////////////////////////////////////////////////
-			//have it render the handlebars based on the data//
-//////////////////////////////////////////////////////////////////////////////////
-
-})
+		})
 	})
 
 	app.get('/logout',(req,res)=>{
 		req.logout();
-		res.send("YOU ARE NOW LOGGED OUT")
+		res.redirect('/');
 	})
 }

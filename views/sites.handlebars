@@ -3,6 +3,11 @@
 
 <h1>Your Websites!</h1>
 
+<form action="/logout" method="get">
+	<button>
+		<input type="submit" value="Log out"/>
+	</button>
+</form>
 
 <table class="table table-striped">
 	<thead>
@@ -12,20 +17,23 @@
 		</tr>
 	</thead>
 	<tbody>
-		
-	{{#each websites}}
-	<tr>
-		<td>{{this.website}}</td>
-		<td>{{this.password}}</td>
-		<td><input type="text" id="password"><button id="changePassword" data-postId='{{this.id}}'>Change your password</button></td>
-	</tr>
-	{{/each}}
-	<br>
-	<tr>
-		<td><input type="text" name="website" placeholder="New Website"/></td>
-		<td><input type="text" name="website" placeholder="New Password"/></td>
-		<td><button type="submit" class="btn btn-default">Submit</button></td>
-	</tr>
+
+		{{#each websites}}
+		<tr>
+			<td>{{this.website}}</td>
+			<td>{{this.password}}</td>
+			<td><input type="text" class="passwordInput"><button class="changePassword" data-postId='{{this.id}}'>Change your password</button></td>
+		</tr>
+		{{/each}}
+		<br>
+		<form action="/api/website" method="post">
+			<tr>
+				<td><input type="text" name="website" placeholder="New Website"/></td>
+				<td><input type="text" name="password" placeholder="New Password"/></td>
+				<td><input type="submit" value="Submit"/></td>
+			</tr>
+			<div name='id'></div>
+		</form>
 	</tbody>
 </table>
 

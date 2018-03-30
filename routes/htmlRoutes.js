@@ -5,9 +5,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "./assets/index.html"));
   });
 
-  app.get("/haha", function(req, res) {
-    res.sendFile(path.join(__dirname, "../test/test.html"));
-  });
+
 
 
 };

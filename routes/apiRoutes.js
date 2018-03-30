@@ -1,22 +1,33 @@
 var db = require("../models");
 
+function loggedIn(req, res, next) {
+  if (req.user) {
+    next();
+  } else {
+    res.redirect("/")
+  }
+}
+
 module.exports = function(app) {
 
   app.post("/api/website", function(req, res) {
-    db.Pass.create({
-      website: req.body.website,
-      password: req.body.password,
-      UserId: req.body.UserId
-    }).then(function(dbPass) {
-      res.json(dbPass);
-    });
+    console.log(req.session)
+    // db.Pass.create({
+    //   website: req.body.website,
+    //   password: req.body.password,
+    //   UserId: req.body.id
+    // }).then(function(dbPass) {
+    //   res.json(dbPass);
+    // });
   }); 
+
+
+
 
   app.put("/api/passwords/:id", function(req, res) {
     db.Pass.update({
-      website: req.body.website,
       password: req.body.password
-    },{
+    }, {
       where: {id: req.params.id}
     }).then(function(result) {
       console.log("Updated!")
@@ -24,10 +35,10 @@ module.exports = function(app) {
     })
   });
 
-  app.get("/api/users/:id", function(req, res) {
+  app.get("/api/users", function(req, res) {
     db.User.findOne({
       where: {
-        id: req.params.id
+        id: req.user.dataValues.id
       }
     }).then(function(result) {
       res.json(result);
