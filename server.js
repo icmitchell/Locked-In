@@ -12,9 +12,9 @@ var PORT = process.env.PORT || 8080;
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(morgan('combined'));
+app.use(express.static(__dirname + '/public/assets'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static("public"));
 
 var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));

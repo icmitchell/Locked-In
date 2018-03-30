@@ -1,39 +1,54 @@
 body {
-	background-image: url("");
-	background-position: center;
-
+    background-image: url("../img/background6.jpg");
+    background-position: center;
+    background-attachment: fixed; 
 }
-
 #logo {
-	background-image: url("../img/logo.png");
-	background-position: left;
-	background-repeat: no-repeat;
-	background-size: 50%;
-	padding: 60px;
+    background-image: url("../img/logo.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    padding: 60px;
 }
-
 .container {
-	/*background-color: grey;*/
-	padding-bottom: 80px;
+    /*background-color: grey;*/
+    padding-bottom: 80px;
 };
-
 h1 {
-	text-align: center;
-
+    text-align: center;
 }
-
 h2 {
-	text-align: center;
+    text-align: center;
 }
-
 p {
-	text-align: center;
+    text-align: center;
 }
-
+#lock {
+    background-image: url("../img/lock.png");
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 60px;
+    padding-bottom: 25px;
+}
 #right-col {
-	background-color: white;
-	padding-top: 80px;
-	padding-bottom: 80px;
-	padding-right: 40px;
-	padding-left: 40px;
+    background-color: white;
+    padding-top: 40px;
+    padding-bottom: 80px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+h2 {
+    font-family: 'Play', sans-serif;
+    font-size: 50px;
+}
+p {
+}
+#email {
+    font-family: 'Libre Barcode 128 Text', cursive;
+    font-size: 32px;
+}
+#pword {
+    font-family: 'Libre Barcode 128 Text', cursive;
+    font-size: 32px;
 }

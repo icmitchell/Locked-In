@@ -12,12 +12,12 @@ module.exports = function(app) {
     });
   }); 
 
-  app.put("/api/passwords", function(req, res) {
+  app.put("/api/passwords/:id", function(req, res) {
     db.Pass.update({
       website: req.body.website,
       password: req.body.password
     },{
-      where: {id: req.body.id}
+      where: {id: req.params.id}
     }).then(function(result) {
       console.log("Updated!")
       res.json(result);
@@ -44,5 +44,7 @@ module.exports = function(app) {
       res.send(err)
     });
   });
+
+  // app.post()
 
 };
