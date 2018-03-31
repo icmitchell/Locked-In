@@ -1,69 +1,80 @@
 body {
-    background-image: url("../img/background6.jpg");
-    background-position: center;
-    background-attachment: fixed; 
+   background-image: url("../img/background6.jpg");
+   background-position: center;
+   background-attachment: fixed;
+
 }
+
 #logo {
-    background-image: url("../img/logo.png");
-    background-position: left;
-    background-repeat: no-repeat;
-    background-size: 30%;
-    padding: 60px;
+   background-image: url("../img/logo.png");
+   background-position: left;
+   background-repeat: no-repeat;
+   background-size: 30%;
+   padding: 60px;
 }
+
 .page-header {
-    background-image: url("../img/logo.png");
-    background-position: left;
-    background-repeat: no-repeat;
-    background-size: 20%;
-    padding: 20px;
+   background-image: url("../img/logo.png");
+   background-position: left;
+   background-repeat: no-repeat;
+   background-size: 20%;
+   padding: 20px;
 }
+
 .container {
-    /*background-color: grey;*/
-    padding-bottom: 80px;
+   /*background-color: grey;*/
+   padding-bottom: 80px;
 };
+
 h1 {
-    text-align: center;
+   text-align: center;
 }
-#cript {
-    text-align: left;
-    font-size: small;
-}
+
 p {
-    text-align: center;
+   text-align: center;
 }
+
 #lock {
-    background-image: url("../img/lock.png");
-    background-size: 20%;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-top: 60px;
-    padding-bottom: 25px;
+   background-image: url("../img/lock.png");
+   background-size: 20%;
+   background-repeat: no-repeat;
+   background-position: center;
+   padding-top: 60px;
+   padding-bottom: 25px;
 }
 #right-col {
-    background-color: #ccc;
-    padding-top: 40px;
-    padding-bottom: 80px;
-    padding-right: 40px;
-    padding-left: 40px;
+   background-color: #ccc;
+   padding-top: 40px;
+   padding-bottom: 80px;
+   padding-right: 40px;
+   padding-left: 40px;
 }
+
 #mid-col {
-    background-color: #ccc;
-    padding-top: 40px;
-    padding-bottom: 80px;
-    padding-right: 40px;
-    padding-left: 40px;
+   background-color: #ccc;
+   padding-top: 40px;
+   padding-bottom: 80px;
+   padding-right: 40px;
+   padding-left: 40px;
 }
+
 h2 {
-    font-family: 'Play', sans-serif;
-    font-size: 50px;
+   font-family: 'Play', sans-serif;
+   font-size: 50px;
 }
-p {
-}
+
+
 #email {
-    font-family: 'Libre Barcode 128 Text', cursive;
-    font-size: 32px;
+   font-family: 'Libre Barcode 128 Text', cursive;
+   font-size: 32px;
 }
+
 #pword {
-    font-family: 'Libre Barcode 128 Text', cursive;
-    font-size: 32px;
+   font-family: 'Libre Barcode 128 Text', cursive;
+   font-size: 32px;
+}
+
+.table-striped {
+   background-color: #ccc;
+   padding-top: 40px;
 }
