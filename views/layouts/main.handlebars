@@ -24,8 +24,6 @@
 			event.preventDefault()
 			var newPassword = $(this).prev("input[type='text']").val().trim()
 			var queryURL = "/api/passwords/"+$(this).attr("data-postId")
-			console.log(queryURL)
-			console.log(newPassword)
 			$.ajax({
 				url: queryURL,
 				type: "PUT",
