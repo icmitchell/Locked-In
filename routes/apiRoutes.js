@@ -21,9 +21,9 @@ module.exports = function(app) {
   }); 
 
   app.get("/api/passwords", loggedIn, function(req, res) {
-    db.User.findOne({
+    db.Pass.findAll({
       where: {
-        id: req.user.dataValues.id
+        userId: req.user.dataValues.id
       }
     }).then(function(result) {
       res.json(result);
