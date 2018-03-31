@@ -24,8 +24,9 @@ body {
 h1 {
     text-align: center;
 }
-h2 {
-    text-align: center;
+#cript {
+    text-align: left;
+    font-size: small;
 }
 p {
     text-align: center;
