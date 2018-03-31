@@ -20,6 +20,16 @@ module.exports = function(app) {
     });
   }); 
 
+  app.get("/api/passwords", loggedIn, function(req, res) {
+    db.User.findOne({
+      where: {
+        id: req.user.dataValues.id
+      }
+    }).then(function(result) {
+      res.json(result);
+    });
+  });
+
   app.put("/api/passwords/:id", loggedIn, function(req, res) {
     db.Pass.update({
       password: req.body.password
