@@ -1,6 +1,6 @@
 {
 	"name": "LockedIn",
-	"version": "1.02",
+	"version": "1.03",
 	"description": "All of your passwords in one easy to access, and secure, place.",
 	"permissions": ["cookies", "https://nameless-falls-24533.herokuapp.com/dashboard/*", "activeTab", "declarativeContent", "storage"],
 	"manifest_version": 2,
