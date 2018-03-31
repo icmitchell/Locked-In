@@ -1,39 +1,33 @@
-<h1>Welcome: {{username}}</h1>
-
-
-<h1>Your Websites!</h1>
-
+<h2>Welcome: {{username}}!</h2>
+<h1> All your websites saved in one place!</h1>
+<br>
+<h4>Manage your sites below.</h4>
 <form action="/logout" method="get">
-	<button>
-		<input type="submit" value="Log out"/>
-	</button>
+        <input type="submit" value="Log out"/>
+    
 </form>
-
 <table class="table table-striped">
-	<thead>
-		<tr>
-			<th>Website Name</th>
-			<th>Your Password</th>
-		</tr>
-	</thead>
-	<tbody>
-
-		{{#each websites}}
-		<tr>
-			<td>{{this.website}}</td>
-			<td>{{this.password}}</td>
-			<td><input type="text" class="passwordInput"><button class="changePassword" data-postId='{{this.id}}'>Change your password</button></td>
-		</tr>
-		{{/each}}
-		<br>
-		<form action="/api/website/" method="post">
-			<tr>
-				<td><input type="text" name="website" placeholder="New Website"/></td>
-				<td><input type="text" name="password" placeholder="New Password"/></td>
-				<td><input type="submit" value="Submit"/></td>
-			</tr>
-		</form>
-	</tbody>
+    <thead>
+        <tr>
+            <th id="website">Website Name</th>
+            <th id="pass">Your Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each websites}}
+        <tr>
+            <td id="saved-site">{{this.website}}</td>
+            <td id="saved-pass">{{this.password}}</td>
+            <td><input type="text" class="passwordInput" placeholder="Change Password"> <button type="button" class="btn btn-primary btn-xs" class="changePassword" data-postId='{{this.id}}'>Save</button></td>
+        </tr>
+        {{/each}}
+        <br>
+        <form action="/api/website/" method="post">
+            <tr>
+                <td><input type="text" name="website" placeholder="New Website"/></td>
+                <td><input type="text" name="password" placeholder="New Password"/></td>
+                <td><input type="submit" value="Submit"/></td>
+            </tr>
+        </form>
+    </tbody>
 </table>
-
-
