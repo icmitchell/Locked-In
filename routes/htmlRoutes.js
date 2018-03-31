@@ -11,7 +11,11 @@ function loggedIn(req, res, next) {
 
 module.exports = function(app) {
 	app.get("/", function(req, res) {
-		res.sendFile(path.join(__dirname, "./assets/index.html"));
+		res.sendFile(path.join(__dirname, "../assets/index.html"));
+	});
+
+	app.get("/newUser", function(req, res) {
+		res.sendFile(path.join(__dirname, "../public/assets/newAccount.html"));
 	});
 
 	app.get("/dashboard", loggedIn, function(req, res) {

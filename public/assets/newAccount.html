@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LockedIn</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Play" rel="stylesheet">
+    <!-- Glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+</head>
+<body>
+    <div  class="page-header">
+        <!--logo goes here-->
+        <h1></h1>
+    </div>    
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-4" id="left-col"></div>
+            <div class="col-md-4" id="mid-col">
+                <div id="lock"></div>
+                <h2>Welcome to LockedIn</h2>
+                <br>
+                <p> Simply fill out the form below to create a new account and become LockedIn!</p>
+                <br>
+                <p> 
+                    <form action="/api/user" method="post">
+                        <div class="form-group">
+                            <label id="email" for="exampleInputEmail1"> Choose a Username</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="name" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <label id="pword" for="exampleInputPassword1">Create a Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+                        </div>
+
+                        <input type="submit" class="btn btn-default" value="Create Account"/>
+                    </form>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+        <footer>
+            <p class="text-muted text-muted-footer text-center">
+                <small>
+                    &copy; Copyright 2018 LockedIn. All Rights Reserved
+                </small>
+            </p>
+        </footer>
+
+    </body>
+    </html>

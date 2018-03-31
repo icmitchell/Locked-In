@@ -26,7 +26,7 @@ module.exports = function(app) {
     }, {
       where: {id: req.params.id}
     }).then(function(result) {
-      res.redirect("/dashboard")
+      res.send("success")
     })
   });
 
@@ -45,7 +45,7 @@ module.exports = function(app) {
       name: req.body.name,
       password: req.body.password
     }).then(function(dbUser) {
-      res.json(dbUser);
+      res.redirect("/")
     }).catch(function(err){
       res.send(err)
     });
