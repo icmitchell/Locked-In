@@ -1,0 +1,15 @@
+# Locked-In
+
+## Product Concept
+
+This is a password databse. Instead of using the same password across every site (terrible for security) you can now use better passwords without worrying about remembering which site uses which password. Just create an account with us and keep every password protected behind one master password.
+
+## What's included
+
+* Polished Frontend UL
+* HTML/CSS/Bootstrap
+* Ajax – APIs data pulling
+* MySQL - Sequelize
+* JavaScript
+* Node.js & Express.js
+* Heroku – Deployment
